@@ -1,7 +1,7 @@
 {
     "author": "Thomas Malt",
     "name": "debug-dump",
-    "version": "0.0.2",
+    "version": "0.1.2",
     "keywords": "development debug object data dumper",
     "description": "A debug dumper for times when your current environment won't let you inspect objects in a proper way.",
     "repository": {
