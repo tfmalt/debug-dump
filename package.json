@@ -11,9 +11,12 @@
     "dependencies": {
         "underscore": ">= 1.4.4"
     },
-    "dev-dependencies": {
+    "devDependencies": {
         "mocha": ">= 1.8.1",
         "chai": ">= 1.5.0"
     },
-    "main": "./src/debugdump.js"
+    "main": "./src/debugdump.js",
+    "scripts": {
+        "test": "mocha -R spec"
+    }
 }
