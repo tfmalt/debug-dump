@@ -1,0 +1,19 @@
+{
+    "author": "Thomas Malt",
+    "name": "debug-dump",
+    "version": "0.0.2",
+    "keywords": "development debug object data dumper",
+    "description": "A debug dumper for times when your current environment won't let you inspect objects in a proper way.",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "dependencies": {
+        "underscore": ">= 1.4.4"
+    },
+    "dev-dependencies": {
+        "mocha": ">= 1.8.1",
+        "chai": ">= 1.5.0"
+    },
+    "main": "./src/debugdump.js"
+}
