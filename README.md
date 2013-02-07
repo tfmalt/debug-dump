@@ -1,6 +1,13 @@
 debug-dump
 ==========
-A js lib for when you don't have access to an interactive webkit console.
+A js lib for the days you don't have access to an interactive javascript console.
+
+Usage
+-----
+
+    var dd = require('debug-dump');
+    console.log(dd.inspect({}));
+
 
 Rationale
 ---------
@@ -23,10 +30,5 @@ as is.
 Currently it only exports one function:
 - inspect() : Implemented to work similar to the util.inspect function in node.
 
-Usage
------
-
-    var dd = require('debug-dump');
-    console.log(dd.inspect({}));
 
 
