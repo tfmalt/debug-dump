@@ -1,6 +1,6 @@
 var chai   = require('chai');
 var should = chai.should();
-var debug  = require('../www/js/debug');
+var debug  = require('../src/debugdump');
 var u      = require('underscore');
 
 describe( 'Testing debug', function () {
