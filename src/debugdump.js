@@ -35,7 +35,7 @@
     u = _getUnderscore();
     _inspect = function (obj, depth, curr) {
         depth = depth || 2; // init depth if not set.
-
+        if (typeof obj === "undefined") return '[undefined]';
         if (u.isString(obj)) return "'" + obj + "'";
         // if (curr == depth+1) return obj.toString();
 
@@ -52,6 +52,7 @@
     _inspectArray = function (obj, depth, curr) {
         // throw exception if not an array
         // console.log("DEBUG: " + curr + ":" + obj.toString());
+        if (typeof obj === 'undefined') return '[undefined]';
         if (depth == curr - 1) return '[object Array]';
         var str = "[ ";
         u.each(obj, function (val) {
@@ -65,6 +66,7 @@
 
     _inspectObject = function (obj, depth, curr) {
         if (depth == curr - 1) return obj.toString();
+        if (typeof obj === 'undefined') return '[undefined]';
 
         var indent = Array(Number(curr)).join("  ");
         var str    = "{\n";
