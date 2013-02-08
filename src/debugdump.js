@@ -7,19 +7,32 @@
 (function (exports) {
     "use strict";
     var isNode,
-        root,
-        dd,
         u,
         _inspect,
         _inspectArray,
         _inspectFunction,
-        _inspectObject;
+        _inspectObject,
+        _getUnderscore;
 
     isNode = (typeof module !== 'undefined' && module.exports) ? true : false;
-    root   = this;
-    dd     = {};
-    u      = (isNode) ? require('underscore') : _;
 
+    _getUnderscore = function () {
+        if (isNode) {
+            try {
+                return require('underscore');
+            } catch (e) {
+                console.log("Could not require underscore: " + e.toString());
+            }
+        } else {
+            try {
+                return _;
+            } catch (e) {
+                alert("You must load underscore for this script to work");
+            }
+        }
+    };
+
+    u = _getUnderscore();
     _inspect = function (obj, depth, curr) {
         depth = depth || 2; // init depth if not set.
 
@@ -74,11 +87,7 @@
         return "[Function]";
     };
 
-    if (isNode === true) {
-        module.exports.inspect = _inspect;
-    } else {
-        root.dd = {};
-        root.dd.inspect = _inspect;
-    }
-})();
+    exports.inspect = _inspect;
+
+})(typeof exports === 'undefined' ? this['dd'] = {} : exports);
 
