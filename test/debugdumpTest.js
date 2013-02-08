@@ -1,11 +1,22 @@
-var chai   = require('chai');
-var should = chai.should();
-var debug  = require('../src/debugdump');
-var u      = require('underscore');
+var chai,
+    should,
+    debug,
+    u;
 
-describe( 'Testing debug', function () {
+if (typeof module !== 'undefined' && module.exports) {
+    // trying to make tests work in browser ootb
+    chai   = require('chai');
+    should = chai.should();
+    debug  = require('../src/debugdump');
+    u      = require('underscore');
+} else {
+    should = chai.should();
+    debug  = dd;
+}
+
+describe( 'Testing debug-dump', function () {
     describe('#inspect() -> _inspectArray()', function () {
-        it('Should return true', function () {
+        it('Sanity Check should return true', function () {
             var res = true;
             res.should.be.true;
         });
