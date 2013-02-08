@@ -13,7 +13,9 @@
     },
     "devDependencies": {
         "mocha": ">= 1.8.1",
-        "chai": ">= 1.5.0"
+        "chai": ">= 1.5.0",
+        "grunt-mocha": ">= 0.2.1",
+        "grunt-mocha-test": ">= 0.1.1"
     },
     "main": "./src/debugdump.js",
     "scripts": {
