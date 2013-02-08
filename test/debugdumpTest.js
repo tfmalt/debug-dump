@@ -135,6 +135,9 @@ describe( 'Testing debug-dump', function () {
             // console.log("DEBUG: \n" + debug.inspect(test) + "\n" + result);
             debug.inspect(test).should.be.string(result);
         });
+        it('Should output [undefined] if it gets pased undefined', function() {
+            debug.inspect(undefined).should.be.string('[undefined]');
+        });
     });
 
     describe('#inspect() > Must be respectful of depth', function () {
